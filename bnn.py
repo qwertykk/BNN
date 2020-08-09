@@ -28,7 +28,7 @@ model = keras.Sequential([
 
 for layer in model.layers:
     print(layer.name)
-    # layer.set_weights(layer.get_weights())
+    # layer.set_weights([[np.sign(y) for y in x] for x in layer.get_weights()])
     print(layer.get_weights())
 
 model.summary()
