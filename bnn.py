@@ -26,10 +26,10 @@ model = keras.Sequential([
     keras.layers.Dense(10, activation=tf.math.softmax)
 ])
 
-for layer in model.layers:
-    print(layer.name)
-    # layer.set_weights([[np.sign(y) for y in x] for x in layer.get_weights()])
-    print(layer.get_weights())
+# for layer in model.layers:
+#     print(layer.name)
+#     layer.set_weights([[np.sign(y) for y in x] for x in layer.get_weights()])
+#     print(layer.get_weights())
 
 model.summary()
 
@@ -41,4 +41,4 @@ model.compile(optimizer=tf.keras.optimizers.Adam(),
 
 model.fit(train_images, train_labels, epochs=5)
 test_loss, test_acc = model.evaluate(test_images, test_labels)
-print(test_loss, test_acc)
+print("test loss = ", test_loss, "; test accuracy = ", test_acc)
