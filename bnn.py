@@ -31,14 +31,14 @@ for layer in model.layers:
     # layer.set_weights(layer.get_weights())
     print(layer.get_weights())
 
-# model.summary()
+model.summary()
 
-# plot_model(model, to_file='model_plot.png', show_shapes=True, show_layer_names=True)
+plot_model(model, to_file='model_plot.png', show_shapes=True, show_layer_names=True)
 
-# model.compile(optimizer=tf.keras.optimizers.Adam(),
-#               loss='sparse_categorical_crossentropy',
-#               metrics=['accuracy'])
-#
-# model.fit(train_images, train_labels, epochs=5)
-# test_loss, test_acc = model.evaluate(test_images, test_labels)
-# print(test_loss, test_acc)
+model.compile(optimizer=tf.keras.optimizers.Adam(),
+              loss='sparse_categorical_crossentropy',
+              metrics=['accuracy'])
+
+model.fit(train_images, train_labels, epochs=5)
+test_loss, test_acc = model.evaluate(test_images, test_labels)
+print(test_loss, test_acc)
